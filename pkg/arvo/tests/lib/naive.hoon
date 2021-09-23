@@ -3691,8 +3691,6 @@
       (gen-tx 1 tx-2 %marbud-key-1)
     (reap +((div batch-size 2)) (gen-tx 0 tx-1 %marbud-key-0))
   ::
-  =|  =^state:naive
-  =^  f  state  (init-marbud state)
   %+  expect-eq
     !>  +(batch-size)
   ::
