@@ -3433,6 +3433,22 @@
     =^  f  state  (n state %bat q:(gen-tx 0 bz-spawn %zod-skey-0))
     transfer-proxy.own:(got:orm points.state ~binzod)
 ::
+++  test-zod-planet-spawn
+  :: Make sure galaxies can't spawn planets
+  =/  dr-spawn       [[~zod %own] %spawn ~dapnep-ronmyl (addr %zod-dr-key-0)]
+  ::
+  =|  init-state=^state:naive
+  =^  f  init-state  (init-zod init-state)
+  =/  zod  (got:orm points.init-state ~zod)
+  =/  new-zod  zod(nonce.owner.own 1)
+  %+  expect-eq
+   !>  init-state(points (put:orm points.init-state ~zod new-zod))
+ ::
+   !>
+   =|  =^state:naive
+   =^  f  state  (n init-state %bat q:(gen-tx 0 dr-spawn %zod-key-0))
+   state
+::
 ++  test-dopzod-spawn
   =/  tm-spawn        [[~dopzod %own] %spawn ~tasben-monbur (addr %tm)]
   ::
