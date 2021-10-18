@@ -8,7 +8,7 @@ let
 
   src = lib.cleanSource ../../../pkg/urbit;
 
-  version = builtins.readFile "${src}/version";
+  version = "1.5";
 
 in stdenv.mkDerivation {
   inherit src version;
