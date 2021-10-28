@@ -63,7 +63,11 @@
     =|  cards=(list card)
     |-
     ?-  -.old
-      %1  [(flop cards) this]
+    ::
+        %1
+      =?  cards  !(~(has by wex.bowl) [/hark our.bowl %hark-store])
+        :_(cards (~(watch-our pass:io /hark) %hark-store /notes))
+      [(flop cards) this]
     ::
         %0
       %_    $
